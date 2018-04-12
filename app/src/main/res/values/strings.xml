@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">DiaryAppLayoutDesign</string>
+    <string name="main_title">Daybook</string>
+    <string name="main_subtitle">Your personal diary</string>
+    <string name="main_question">How are you feeling today?</string>
+    <string name="sub_question">What made you feel</string>
+    <string name="sad_text">Sad</string>
+    <string name="worthless_text">Worthless</string>
+    <string name="demotivated_text">Demotivated</string>
+    <string name="angry_text">Angry</string>
+    <string name="anxious_text">Anxious</string>
+    <string name="happy_text">Happy</string>
+
+
+
+
+
+
+</resources>
