@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/green_gradient">
+    android:background="@drawable/green_gradient"
+    android:onClick="hideKeyboard">
 
     <TextView
         android:id="@+id/id_tv_main_question"
@@ -40,7 +42,9 @@
             android:layout_margin="5dp"
             android:layout_row="0"
             app:cardBackgroundColor="#009688"
-            app:cardCornerRadius="8dp">
+            app:cardCornerRadius="8dp"
+            android:id="@+id/cv_id_1"
+            android:onClick="cardClicked">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -75,7 +79,9 @@
             android:layout_margin="5dp"
             android:layout_row="0"
             app:cardBackgroundColor="#009688"
-            app:cardCornerRadius="8dp">
+            app:cardCornerRadius="8dp"
+            android:id="@+id/cv_id_2"
+            android:onClick="cardClicked">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -108,7 +114,9 @@
             android:layout_margin="5dp"
             android:layout_row="0"
             app:cardBackgroundColor="#009688"
-            app:cardCornerRadius="8dp">
+            app:cardCornerRadius="8dp"
+            android:id="@+id/cv_id_3"
+            android:onClick="cardClicked">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -141,7 +149,9 @@
             android:layout_margin="5dp"
             android:layout_row="1"
             app:cardBackgroundColor="#009688"
-            app:cardCornerRadius="8dp">
+            app:cardCornerRadius="8dp"
+            android:id="@+id/cv_id_4"
+            android:onClick="cardClicked">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -174,7 +184,9 @@
             android:layout_margin="5dp"
             android:layout_row="1"
             app:cardBackgroundColor="#009688"
-            app:cardCornerRadius="8dp">
+            app:cardCornerRadius="8dp"
+            android:id="@+id/cv_id_5"
+            android:onClick="cardClicked">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -207,7 +219,10 @@
             android:layout_margin="5dp"
             android:layout_row="1"
             app:cardBackgroundColor="#009688"
-            app:cardCornerRadius="8dp">
+            app:cardCornerRadius="8dp"
+            android:clickable="true"
+            android:id="@+id/cv_id_6"
+            android:onClick="cardClicked">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -247,25 +262,100 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gridLayout2" />
 
-    <EditText
-        android:id="@+id/editText3"
-        android:layout_width="0dp"
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:ems="10"
-        android:gravity="top|left"
-        android:inputType="textMultiLine"
-        android:lines="8"
-        android:maxLines="10"
-        android:minLines="6"
-        android:scrollbars="vertical"
+        android:elevation="10dp"
+        app:cardCornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        app:layout_constraintTop_toBottomOf="@+id/textView9">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/et_what_happened"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/colorNewAccent"
+                android:ems="10"
+                android:gravity="top|left"
+                android:inputType="textMultiLine"
+                android:lines="8"
+                android:maxLines="10"
+                android:minLines="6"
+                android:padding="10dp"
+                android:scrollbars="vertical"
+                android:textColor="#000000"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+        </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:weightSum="3">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Quick Save"
+            android:textColor="#FFFFFF"
+            android:layout_margin="5dp"
+            android:background="@drawable/buttonshape"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Analyse"
+            android:textColor="#FFFFFF"
+            android:layout_margin="5dp"
+            android:background="@drawable/buttonshape"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="View Notes"
+            android:textColor="#FFFFFF"
+            android:layout_margin="5dp"
+            android:background="@drawable/buttonshape"/>
+
+    </LinearLayout>
+
 
 </android.support.constraint.ConstraintLayout>
